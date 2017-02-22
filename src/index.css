@@ -3,3 +3,16 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.message-container {
+  display: flex;
+}
+
+.message-entry-point {
+  display: block;
+  width: 300px;
+  height: 500px;
+  border-style: red;
+  background-color: black;
+  margin: 10px auto;
+}

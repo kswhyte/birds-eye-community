@@ -8,11 +8,13 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Bird's Eye Property</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+
+        <h1>Message Feed</h1>
+        <section className="message-container">
+          <div className="message-entry-point"></div>
+        </section>
       </div>
     );
   }
