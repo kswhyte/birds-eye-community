@@ -6,8 +6,9 @@ import '../styles/css/App.css';
 
 import Dashboard from './Dashboard'
 import MessageFeed from './MessageFeed'
-import Login from './Login'
+import SignIn from './SignIn'
 import SignOut from './SignOut'
+import CreateTask from './CreateTask'
 
 import moment from 'moment'
 import { split } from 'lodash';
@@ -62,7 +63,7 @@ class App extends Component {
     return (
       <div className="App">
       {!this.state.user ?
-        <Login />
+        <SignIn />
         :
         <div className="app-container">
           <div className="App-header">
@@ -78,6 +79,8 @@ class App extends Component {
           </div>
         </div>
       }
+        <CreateTask />
+        
         <div className="main-container">
           <Dashboard />
           <MessageFeed />
