@@ -10,13 +10,13 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      folders: [],
+      messages: [],
       folderName: '',
     }
   }
 
   componentDidMount() {
-    fetch('/api/folders', {
+    fetch('/api/messages', {
       headers: {
        'Accept': 'application/json',
        'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ class App extends Component {
     .then((res) => res.json())
     .then((res) => {
       this.setState({
-        folders: res
+        messages: res
       })
     })
     .catch((err) => {
