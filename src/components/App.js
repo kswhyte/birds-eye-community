@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
-import logo from '../styles/images/logo.png';
-import '../styles/css/App.css';
-import Dashboard from './Dashboard'
+import React, { Component } from 'react'
+import logo from '../styles/images/logo.png'
+import '../styles/css/reset.css'
+import '../styles/css/App.css'
 import moment from 'moment'
+
+import Dashboard from './Dashboard'
+import MessageFeed from './MessageFeed'
 
 require('es6-promise').polyfill()
 require('isomorphic-fetch')
@@ -32,7 +35,7 @@ class App extends Component {
       })
     })
     .catch((err) => {
-      console.error(err);
+      console.error(err)
     })
   }
 
@@ -46,15 +49,13 @@ class App extends Component {
           <p>{moment().format('MMMM Do YYYY')}</p>
         </div>
 
-        <h1>Message Feed</h1>
-        <section className="message-container">
-          <div className="message-entry-point"></div>
-        </section>
-        
-        <Dashboard />
+        <div className="main-container">
+          <Dashboard />
+          <MessageFeed />
+        </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
