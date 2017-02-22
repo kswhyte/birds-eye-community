@@ -1,0 +1,39 @@
+.dashboard {
+  width: 30vw;
+  height: 100%;
+  background-color: #e2e2e2;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.dashboard-header {
+  background-color: #777;
+  width: 30vw;
+}
+
+.dashboard-title {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard-body {
+  width: 30vw;
+  height: 100vh;
+}
+
+.dashboard-categories {
+  margin: 20px;
+  width: 30vh;
+  text-align: left;
+}
+
+li.topic-names {
+  list-style: none;
+  /*margin: 5px auto;*/
+}
