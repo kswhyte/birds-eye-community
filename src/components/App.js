@@ -10,7 +10,7 @@ import SignIn from './SignIn'
 import SignOut from './SignOut'
 
 import moment from 'moment'
-import { split } from 'lodash';
+import { split, pick } from 'lodash';
 
 class App extends Component {
   constructor() {
@@ -28,6 +28,15 @@ class App extends Component {
 
     firebase.database().ref('channel').on('value', (snapshot) => {
       this.setState({ channelName: snapshot.val().channel})
+    });
+  }
+
+  addNewMessage(draftMessage) {
+    const { user, channelName } = this.state;
+    firebase.database().ref(channelName).push({
+      user: pick(user, 'displayName', 'email', 'uid'),
+      content: draftMessage,
+      createdAt: moment().format('MMMM D, h:mm a')
     });
   }
 
@@ -59,7 +68,7 @@ class App extends Component {
       }
         <div className="main-container">
           <Dashboard />
-          <MessageFeed channelName={this.state.channelName}/>
+          <MessageFeed channelName={this.state.channelName} addNewMessage={this.addNewMessage.bind(this)}/>
         </div>
       </div>
     )
