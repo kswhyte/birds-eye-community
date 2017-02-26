@@ -26,7 +26,10 @@ export default class MessageFeed extends Component {
           <div className="message-entry-point"></div>
         </section>
 
-        <Messages />
+        <Messages
+          currentUser={this.props.currentUser}
+          channelName={this.props.channelName}
+        />
 
         <UserInput
           channelName={this.props.channelName}

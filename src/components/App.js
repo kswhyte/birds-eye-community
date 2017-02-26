@@ -71,6 +71,7 @@ class App extends Component {
           <MessageFeed
             channelName={this.state.channelName}
             addNewMessage={this.addNewMessage.bind(this)}
+            currentUser={currentUser}
           />
         </div>
       </div>
