@@ -2,7 +2,7 @@ import React from 'react'
 import { signIn } from '../firebase'
 import { split } from 'lodash';
 
-const Login = ({ user }) => {
+const SignIn = ({ user }) => {
 
   return (
     <div className="login-container">
@@ -11,4 +11,4 @@ const Login = ({ user }) => {
   );
 };
 
-export default Login;
+export default SignIn;

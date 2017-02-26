@@ -6,16 +6,11 @@ import '../styles/css/App.css';
 
 import Dashboard from './Dashboard'
 import MessageFeed from './MessageFeed'
-import Login from './Login'
+import SignIn from './SignIn'
 import SignOut from './SignOut'
 
 import moment from 'moment'
 import { split } from 'lodash';
-
-
-require('es6-promise').polyfill()
-require('isomorphic-fetch')
-
 
 class App extends Component {
   constructor() {
@@ -24,45 +19,29 @@ class App extends Component {
       messages: [],
       folderName: '',
       user: null,
+      channelName: ''
     }
-  }
-
-  componentDidMount() {
-    fetch('/api/messages', {
-      headers: {
-       'Accept': 'application/json',
-       'Content-Type': 'application/json'
-      },
-      method: 'get'
-    })
-    .then((res) => res.json())
-    .then((res) => {
-      this.setState({
-        messages: res
-      })
-    })
-    .catch((err) => {
-      console.error(err)
-    })
   }
 
   componentWillMount() {
     firebase.auth().onAuthStateChanged(user => this.setState({ user }));
+
+    firebase.database().ref('channel').on('value', (snapshot) => {
+      this.setState({ channelName: snapshot.val().channel})
+    });
   }
 
   render() {
     let { user } = this.state
     let currentUser;
-    let firstName;
     if (user !== null) {
       currentUser = user.displayName
-      firstName = split(user.displayName, ' ')
     }
 
     return (
       <div className="App">
       {!this.state.user ?
-        <Login />
+        <SignIn />
         :
         <div className="app-container">
           <div className="App-header">
@@ -80,7 +59,7 @@ class App extends Component {
       }
         <div className="main-container">
           <Dashboard />
-          <MessageFeed />
+          <MessageFeed channelName={this.state.channelName}/>
         </div>
       </div>
     )

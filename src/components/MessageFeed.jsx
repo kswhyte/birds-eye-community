@@ -18,7 +18,7 @@ export default class MessageFeed extends Component {
     return (
       <div className="messages">
         <section className="messages-header">
-          <h1 className="messages-title">Message Feed</h1>
+          <h1 className="messages-title">{this.props.channelName}</h1>
         </section>
 
         <section className="message-container">

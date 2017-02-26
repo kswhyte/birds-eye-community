@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import logo from '../styles/images/logo.svg'
 import '../styles/css/Dashboard.css'
+import firebase from 'firebase';
 
 export default class Dashboard extends Component {
   constructor() {
     super()
     this.state = {
-      title: 'Dashboard',
       channelTopics: [
         'Communal',
         'Bathroom',
@@ -29,7 +29,9 @@ export default class Dashboard extends Component {
   }
 
   updateTitle(e) {
-    this.setState({ title: e })
+    firebase.database().ref('channel').set({
+        channel: e
+    });
   }
 
   render() {
@@ -40,7 +42,7 @@ export default class Dashboard extends Component {
     return (
       <div className="dashboard">
         <section className="dashboard-header">
-          <h1 className="dashboard-title">{this.state.title}</h1>
+          <h1 className="dashboard-title">Channels</h1>
         </section>
 
         <section className="dashboard-body">
