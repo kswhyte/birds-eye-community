@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import firebase from '../firebase';
 
 export default class UserInput extends Component {
   constructor() {
@@ -26,14 +25,12 @@ export default class UserInput extends Component {
         value={this.state.draftMessage}
         onChange={(e) => this.setState({ draftMessage: e.target.value })}
       />
-      <span className = 'user-input-btns'>
       <input
         className='submit-button button'
         type='submit'
         onClick={(e) => this.submitMessage(e)}
         value='Submit'
       />
-      </span>
     </form>
     )
   }

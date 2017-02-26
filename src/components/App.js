@@ -10,7 +10,7 @@ import SignIn from './SignIn'
 import SignOut from './SignOut'
 
 import moment from 'moment'
-import { split, pick } from 'lodash';
+import { pick } from 'lodash';
 
 class App extends Component {
   constructor() {
@@ -68,7 +68,10 @@ class App extends Component {
       }
         <div className="main-container">
           <Dashboard />
-          <MessageFeed channelName={this.state.channelName} addNewMessage={this.addNewMessage.bind(this)}/>
+          <MessageFeed
+            channelName={this.state.channelName}
+            addNewMessage={this.addNewMessage.bind(this)}
+          />
         </div>
       </div>
     )

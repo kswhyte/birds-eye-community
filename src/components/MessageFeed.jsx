@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import logo from '../styles/images/logo.svg'
 import '../styles/css/MessageFeed.css'
 import UserInput from './UserInput'
+import Messages from './Messages'
 
 export default class MessageFeed extends Component {
   constructor() {
@@ -26,11 +26,13 @@ export default class MessageFeed extends Component {
           <div className="message-entry-point"></div>
         </section>
 
+        <Messages />
+
         <UserInput
           channelName={this.props.channelName}
           addNewMessage={this.props.addNewMessage}
         />
-        
+
       </div>
     )
   }

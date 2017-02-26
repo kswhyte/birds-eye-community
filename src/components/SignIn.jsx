@@ -1,6 +1,5 @@
 import React from 'react'
 import { signIn } from '../firebase'
-import { split } from 'lodash';
 
 const SignIn = ({ user }) => {
 
