@@ -11,10 +11,6 @@ export default class MessageFeed extends Component {
     }
   }
 
-  updateTitle(e) {
-    this.setState({ title: e })
-  }
-
   render() {
     return (
       <div className="messages">
@@ -29,6 +25,8 @@ export default class MessageFeed extends Component {
         <Messages
           currentUser={this.props.currentUser}
           channelName={this.props.channelName}
+          fetchMessages={this.props.fetchMessages.bind(this)}
+          messages={this.props.messages}
         />
 
         <UserInput

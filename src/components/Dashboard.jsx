@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../styles/css/Dashboard.css'
-import firebase from 'firebase';
 
 export default class Dashboard extends Component {
   constructor() {
@@ -27,15 +26,9 @@ export default class Dashboard extends Component {
     }
   }
 
-  updateTitle(e) {
-    firebase.database().ref('channel').set({
-        channel: e
-    });
-  }
-
   render() {
     let topics = this.state.channelTopics.map(e => {
-      return <li className="topic-names" key={e}><a onClick={() => this.updateTitle(e)}> {e} </a></li>
+      return <li className="topic-names" key={e}><a onClick={() => this.props.updateTitle(e)}> {e} </a></li>
     })
 
     return (

@@ -10,25 +10,21 @@ import SignIn from './SignIn'
 import SignOut from './SignOut'
 
 import moment from 'moment'
-import { pick } from 'lodash';
+import { pick, map, extend } from 'lodash';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       messages: [],
-      folderName: '',
       user: null,
-      channelName: ''
+      channelName: 'Communal'
     }
   }
 
   componentWillMount() {
     firebase.auth().onAuthStateChanged(user => this.setState({ user }));
-
-    firebase.database().ref('channel').on('value', (snapshot) => {
-      this.setState({ channelName: snapshot.val().channel})
-    });
+    this.fetchMessages(this.state.channelName)
   }
 
   addNewMessage(draftMessage) {
@@ -38,6 +34,26 @@ class App extends Component {
       content: draftMessage,
       createdAt: moment().format('MMMM D, h:mm a')
     });
+    this.fetchMessages(this.state.channelName)
+  }
+
+  updateTitle(e) {
+    this.setState({ messages: [] })
+    this.setState({ channelName: e })
+    firebase.database().ref('channel').set({
+        channel: e
+    });
+    this.fetchMessages(e)
+  }
+
+  fetchMessages(e) {
+    this.setState({ messages: [] })
+    firebase.database().ref(e).on('value', (snapshot) => {
+      const messages = snapshot.val() || {}
+      this.setState({
+        messages: map(messages, (val, key) => extend(val, { key }))
+      })
+    })
   }
 
   render() {
@@ -67,10 +83,14 @@ class App extends Component {
         </div>
       }
         <div className="main-container">
-          <Dashboard />
+          <Dashboard
+            updateTitle={this.updateTitle.bind(this)}
+          />
           <MessageFeed
             channelName={this.state.channelName}
             addNewMessage={this.addNewMessage.bind(this)}
+            fetchMessages={this.fetchMessages.bind(this)}
+            messages={this.state.messages}
             currentUser={currentUser}
           />
         </div>
