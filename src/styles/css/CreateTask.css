@@ -1,0 +1,13 @@
+.create-task-form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  padding: 20px;
+  background-color: lightblue;
+}
+
+.select-channel, .assigned-to, .task-name, .message-content, .due-date {
+  width: 300px;
+  margin: 5px auto;
+}

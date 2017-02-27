@@ -6,12 +6,8 @@ export default class MessageFeed extends Component {
   constructor() {
     super()
     this.state = {
-      messages: 'MessageFeed'
+      messages: []
     }
-  }
-
-  updateTitle(e) {
-    this.setState({ title: e })
   }
 
   render() {

@@ -9,21 +9,22 @@ export default class Dashboard extends Component {
       title: 'Dashboard',
       channelTopics: [
         'Communal',
+        'Maintenance',
+        'Bills',
         'Bathroom',
         'Bedroom',
         'Kitchen',
-        'Meals',
         'Garden',
-        'Shopping',
-        'Pets',
-        'Maintenance',
+        'Food/Recipes',
+        'Groceries',
+        'Health',
         'Behavior',
-        'Responsibility',
         'Creativity',
         'Study',
         'Spirituality',
-        'Health',
-        'Exercise Routine'
+        'Shopping',
+        'Exercise',
+        'Pets',
       ]
     }
   }
