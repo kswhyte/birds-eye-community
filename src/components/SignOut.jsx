@@ -1,6 +1,5 @@
 import React from 'react'
 import { signOut } from '../firebase'
-import { split } from 'lodash';
 
 const SignOut = ({ user }) => {
 

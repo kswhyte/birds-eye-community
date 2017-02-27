@@ -16,7 +16,8 @@
   background-color: yellow;
   display: block;
   width: 70vw;
-  height: 55vh;
+  /*height: 55vh;*/
+  height: 300px;
   border-style: red;
   background-color: grey;
   margin: 0 auto;
