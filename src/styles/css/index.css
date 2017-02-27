@@ -54,13 +54,13 @@ select {
 }
 
 input:not([type=submit]):not([type=file]) {
-  font-family: 'Arsenal', sans-serif;
-  font-size: 1.5em;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
 }
 
 textarea:not([type=submit]):not([type=file]) {
-  font-family: 'Arsenal', sans-serif;
-  font-size: 1.5em;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2em;
 }
 
 button {

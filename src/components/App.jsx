@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
-import logo from '../styles/icons/owl-8.svg'
-import owlBackground from '../styles/images/owl-unsplash.jpg'
 
 import '../styles/css/reset.css'
 import '../styles/css/App.css'
@@ -68,9 +66,8 @@ class App extends Component {
 
     return (
       <div className="app">
-        <div className="app-header" src={owlBackground}>
+        <div className="app-header">
           <div className="app-logo-container">
-            <img className="app-logo" src={logo} alt="logo" />
             <h2 className="app-title">Bird's Eye Community</h2>
             <p className="current-date">{moment().format('MMMM Do YYYY')}</p>
           </div>
@@ -80,7 +77,7 @@ class App extends Component {
             :
           <div>
             <div className="app-user">
-              <p>Welcome {currentUser}</p>
+              <p className="welcome-message">Welcome {currentUser}</p>
               <SignOut />
             </div>
 

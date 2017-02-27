@@ -1,13 +1,6 @@
-
 .app {
   text-align: center;
   background-color: #222;
-}
-
-.app-logo {
-  animation: app-logo-spin infinite 20s linear;
-  width: 100px;
-  margin: 0 auto;
 }
 
 .app-title {
@@ -31,22 +24,18 @@
 }
 
 .app-header {
+  background: url('../images/owl-unsplash2.jpg') no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  background-color: #222;
-  padding: 20px;
+  padding: 100px;
   color: white;
 }
 
-.app-intro {
-  font-size: large;
-}
-
-@keyframes app-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.welcome-message {
+  margin-top: 20px;
 }
 
 .main-container {
@@ -54,5 +43,4 @@
   justify-content: center;
   align-content: center;
   margin: 0;
-  /*height: 100vh;*/
 }
