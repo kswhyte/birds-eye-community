@@ -5,6 +5,7 @@
 .created-at, .display-name {
   margin: 5px 5px 5px 0;
   font-weight: bold;
+  font-size: 1.2em;
 }
 
 .display-name {
@@ -12,6 +13,8 @@
 }
 
 .content {
-  margin: 0 0 11px 7px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.3em;
+  margin: 0 0 15px 7px;
   color: #4b4b4b;
 }

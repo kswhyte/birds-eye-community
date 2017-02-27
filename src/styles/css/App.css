@@ -7,7 +7,27 @@
 .app-logo {
   animation: app-logo-spin infinite 20s linear;
   width: 100px;
-  margin: 20px auto;
+  margin: 0 auto;
+}
+
+.app-title {
+  font-size: 4em;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+.current-date, .app-user {
+  margin: 5px auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+.current-date {
+  color: #fae034;
+  font-size: 2em;
+}
+
+.app-user {
+  color: #f4a237;
 }
 
 .app-header {
@@ -34,4 +54,5 @@
   justify-content: center;
   align-content: center;
   margin: 0;
+  /*height: 100vh;*/
 }

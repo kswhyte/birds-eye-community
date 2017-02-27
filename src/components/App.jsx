@@ -71,17 +71,15 @@ class App extends Component {
       {!this.state.user ?
         <SignIn />
         :
-        <div className="app-container">
-          <div className="app-header">
-            <div className="app-logo-container">
-              <img src={logo} className="app-logo" alt="logo" />
-              <h2>Bird's Eye Community</h2>
-              <p>{moment().format('MMMM Do YYYY')}</p>
-            </div>
-            <div className="app-user">
-              <p>Welcome {currentUser}</p>
-              <SignOut />
-            </div>
+        <div className="app-header" src={owlBackground}>
+          <div className="app-logo-container">
+            <img className="app-logo" src={logo} alt="logo" />
+            <h2 className="app-title">Bird's Eye Community</h2>
+            <p className="current-date">{moment().format('MMMM Do YYYY')}</p>
+          </div>
+          <div className="app-user">
+            <p>Welcome {currentUser}</p>
+            <SignOut />
           </div>
         </div>
       }

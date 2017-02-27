@@ -29,7 +29,11 @@ export default class Dashboard extends Component {
 
   render() {
     let topics = this.state.channelTopics.map(e => {
-      return <li className="topic-names" key={e}><a onClick={() => this.props.updateTitle(e)}> {e} </a></li>
+      return (
+        <li className="topic-names" key={e}>
+          <a onClick={() => this.props.updateTitle(e)}> { e } </a>
+        </li>
+      )
     })
 
     return (
@@ -40,7 +44,7 @@ export default class Dashboard extends Component {
 
         <section className="dashboard-body">
           <ul className="dashboard-categories">
-            {topics}
+            { topics }
           </ul>
         </section>
       </div>
