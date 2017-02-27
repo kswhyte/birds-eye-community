@@ -68,34 +68,36 @@ class App extends Component {
 
     return (
       <div className="app">
-      {!this.state.user ?
-        <SignIn />
-        :
         <div className="app-header" src={owlBackground}>
           <div className="app-logo-container">
             <img className="app-logo" src={logo} alt="logo" />
             <h2 className="app-title">Bird's Eye Community</h2>
             <p className="current-date">{moment().format('MMMM Do YYYY')}</p>
           </div>
-          <div className="app-user">
-            <p>Welcome {currentUser}</p>
-            <SignOut />
-          </div>
         </div>
-      }
+          {!this.state.user ?
+            <SignIn />
+            :
+          <div>
+            <div className="app-user">
+              <p>Welcome {currentUser}</p>
+              <SignOut />
+            </div>
 
-        <div className="main-container">
-          <Dashboard
-            updateTitle={this.updateTitle.bind(this)}
-          />
-          <MessageFeed
-            channelName={this.state.channelName}
-            addNewMessage={this.addNewMessage.bind(this)}
-            fetchMessages={this.fetchMessages.bind(this)}
-            messages={this.state.messages}
-            currentUser={currentUser}
-          />
-        </div>
+            <div className="main-container">
+              <Dashboard
+                updateTitle={this.updateTitle.bind(this)}
+              />
+              <MessageFeed
+                channelName={this.state.channelName}
+                addNewMessage={this.addNewMessage.bind(this)}
+                fetchMessages={this.fetchMessages.bind(this)}
+                messages={this.state.messages}
+                currentUser={currentUser}
+              />
+            </div>
+          </div>
+          }
       </div>
     )
   }

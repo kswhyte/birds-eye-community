@@ -1,6 +1,24 @@
 import React, { Component } from 'react'
 import '../styles/css/Dashboard.css'
 
+// import communal from '../styles/channel-icons/communal.svg'
+// import maintenance from '../styles/channel-icons/maintenance.svg'
+// import bills from '../styles/channel-icons/bills.svg'
+// import bathroom from '../styles/channel-icons/bathroom.svg'
+// import bedroom from '../styles/channel-icons/bedroom.svg'
+// import kitchen from '../styles/channel-icons/kitchen.svg'
+// import garden from '../styles/channel-icons/garden.svg'
+// import food from '../styles/channel-icons/food.svg'
+// import groceries from '../styles/channel-icons/groceries.svg'
+// import health from '../styles/channel-icons/health.svg'
+// import behavior from '../styles/channel-icons/behavior.svg'
+// import creativity from '../styles/channel-icons/creativity.svg'
+// import study from '../styles/channel-icons/study.svg'
+// import spirituality from '../styles/channel-icons/spirituality.svg'
+// import shopping from '../styles/channel-icons/shopping.svg'
+// import exercise from '../styles/channel-icons/exercise.svg'
+// import pets from '../styles/channel-icons/pets.svg'
+
 export default class Dashboard extends Component {
   constructor() {
     super()
@@ -12,15 +30,15 @@ export default class Dashboard extends Component {
         'Bathroom',
         'Bedroom',
         'Kitchen',
+        'Study',
         'Garden',
-        'Food/Recipes',
+        'Food',
         'Groceries',
+        'Shopping',
         'Health',
         'Behavior',
         'Creativity',
-        'Study',
         'Spirituality',
-        'Shopping',
         'Exercise',
         'Pets',
       ]
@@ -28,10 +46,36 @@ export default class Dashboard extends Component {
   }
 
   render() {
+    // let channelIcons = [
+    //   communal,
+    //   maintenance,
+    //   bills,
+    //   bathroom,
+    //   bedroom,
+    //   kitchen,
+    //   study,
+    //   garden,
+    //   groceries,
+    //   shopping,
+    //   food,
+    //   health,
+    //   behavior,
+    //   creativity,
+    //   spirituality,
+    //   exercise,
+    //   pets
+    // ].forEach((icon, i) => {
+    //   console.log('icon', icon)
+    //   return (
+    //     <li><img className="topic-icon" src={icon} alt="community-living-icon" key={i}/></li>
+    //   )
+    // })
+
     let topics = this.state.channelTopics.map(e => {
       return (
         <li className="topic-names" key={e}>
-          <a onClick={() => this.props.updateTitle(e)}> { e } </a>
+          <div className="icon-container"></div>
+          <a onClick={(e) => this.props.updateTitle(e)}> { e } </a>
         </li>
       )
     })
