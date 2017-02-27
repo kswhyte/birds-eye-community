@@ -1,24 +1,25 @@
 .messages-header {
-  background-color: red;
+  background-color: #eee;
   width: 70vw;
 }
 
 .message-container {
+  background-color: #eee;
   display: flex;
+  height: 100vh;
+  display: block;
+  width: 70vw;
+  /*height: 55vh;*/
+  margin: 0 auto;
 }
 
 .messages-title {
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
+  /*color: #fff;*/
+  font-size: 2em;
 }
 
 .message-entry-point {
-  background-color: yellow;
-  display: block;
-  width: 70vw;
-  /*height: 55vh;*/
-  height: 300px;
-  border-style: red;
-  background-color: grey;
-  margin: 0 auto;
+  
 }

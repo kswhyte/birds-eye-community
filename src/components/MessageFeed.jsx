@@ -19,21 +19,17 @@ export default class MessageFeed extends Component {
         </section>
 
         <section className="message-container">
-          <div className="message-entry-point"></div>
+          <Messages
+            currentUser={this.props.currentUser}
+            channelName={this.props.channelName}
+            fetchMessages={this.props.fetchMessages.bind(this)}
+            messages={this.props.messages}
+          />
+          <UserInput
+            channelName={this.props.channelName}
+            addNewMessage={this.props.addNewMessage}
+          />
         </section>
-
-        <Messages
-          currentUser={this.props.currentUser}
-          channelName={this.props.channelName}
-          fetchMessages={this.props.fetchMessages.bind(this)}
-          messages={this.props.messages}
-        />
-
-        <UserInput
-          channelName={this.props.channelName}
-          addNewMessage={this.props.addNewMessage}
-        />
-
       </div>
     )
   }

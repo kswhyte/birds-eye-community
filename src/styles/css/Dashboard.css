@@ -13,18 +13,21 @@
 }
 
 .dashboard-header {
-  background-color: #777;
+  background-color: #999;
   width: 30vw;
 }
 
 .dashboard-title {
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
+  /*color: #fff;*/
+  font-size: 2em;
 }
 
 .dashboard-body {
   width: 30vw;
   height: 100vh;
+  background-color: #999;
 }
 
 .dashboard-categories {
@@ -35,5 +38,12 @@
 
 li.topic-names {
   list-style: none;
-  /*margin: 5px auto;*/
+  margin: 5px 10px;
+  font-size: 1.5em;
+}
+
+li.topic-names:hover {
+  text-decoration: underline;
+  color: #eee;
+
 }

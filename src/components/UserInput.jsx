@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../styles/css/UserInput.css'
 
 export default class UserInput extends Component {
   constructor() {
@@ -21,7 +22,7 @@ export default class UserInput extends Component {
       <input
         type='text'
         className='message-input-field'
-        placeholder={`Message ${this.props.channelName}`}
+        placeholder={`Message the ${this.props.channelName} Channel...`}
         value={this.state.draftMessage}
         onChange={(e) => this.setState({ draftMessage: e.target.value })}
       />

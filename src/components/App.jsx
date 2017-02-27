@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import firebase from 'firebase';
-import logo from '../styles/images/logo.png';
+import React, { Component } from 'react'
+import firebase from 'firebase'
+import logo from '../styles/icons/owl-8.svg'
+import owlBackground from '../styles/images/owl-unsplash.jpg'
+
 import '../styles/css/reset.css'
-import '../styles/css/App.css';
+import '../styles/css/App.css'
 
 import Dashboard from './Dashboard'
 import MessageFeed from './MessageFeed'
@@ -11,7 +13,7 @@ import SignOut from './SignOut'
 import CreateTask from './CreateTask'
 
 import moment from 'moment'
-import { pick, map, extend } from 'lodash';
+import { pick, map, extend } from 'lodash'
 
 class App extends Component {
   constructor() {
@@ -24,17 +26,17 @@ class App extends Component {
   }
 
   componentWillMount() {
-    firebase.auth().onAuthStateChanged(user => this.setState({ user }));
+    firebase.auth().onAuthStateChanged(user => this.setState({ user }))
     this.fetchMessages(this.state.channelName)
   }
 
   addNewMessage(draftMessage) {
-    const { user, channelName } = this.state;
+    const { user, channelName } = this.state
     firebase.database().ref(channelName).push({
       user: pick(user, 'displayName', 'email', 'uid'),
       content: draftMessage,
       createdAt: moment().format('MMMM D, h:mm a')
-    });
+    })
     this.fetchMessages(this.state.channelName)
   }
 
@@ -43,7 +45,7 @@ class App extends Component {
     this.setState({ channelName: e })
     firebase.database().ref('channel').set({
         channel: e
-    });
+    })
     this.fetchMessages(e)
   }
 
@@ -59,20 +61,20 @@ class App extends Component {
 
   render() {
     let { user } = this.state
-    let currentUser;
+    let currentUser
     if (user !== null) {
       currentUser = user.displayName
     }
 
     return (
-      <div className="App">
+      <div className="app">
       {!this.state.user ?
         <SignIn />
         :
         <div className="app-container">
-          <div className="App-header">
+          <div className="app-header">
             <div className="app-logo-container">
-              <img src={logo} className="App-logo" alt="logo" />
+              <img src={logo} className="app-logo" alt="logo" />
               <h2>Bird's Eye Community</h2>
               <p>{moment().format('MMMM Do YYYY')}</p>
             </div>
