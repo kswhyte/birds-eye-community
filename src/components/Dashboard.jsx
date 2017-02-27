@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import logo from '../styles/images/logo.svg'
 import '../styles/css/Dashboard.css'
 
 export default class Dashboard extends Component {
   constructor() {
     super()
     this.state = {
-      title: 'Dashboard',
       channelTopics: [
         'Communal',
         'Maintenance',
@@ -29,19 +27,15 @@ export default class Dashboard extends Component {
     }
   }
 
-  updateTitle(e) {
-    this.setState({ title: e })
-  }
-
   render() {
     let topics = this.state.channelTopics.map(e => {
-      return <li className="topic-names" key={e}><a onClick={() => this.updateTitle(e)}> {e} </a></li>
+      return <li className="topic-names" key={e}><a onClick={() => this.props.updateTitle(e)}> {e} </a></li>
     })
 
     return (
       <div className="dashboard">
         <section className="dashboard-header">
-          <h1 className="dashboard-title">{this.state.title}</h1>
+          <h1 className="dashboard-title">Channels</h1>
         </section>
 
         <section className="dashboard-body">

@@ -1,8 +1,8 @@
 .create-task-form {
-  display: flex;
+  /*display: flex;
   justify-content: center;
   align-content: center;
-  flex-direction: column;
+  flex-direction: column;*/
   padding: 20px;
   background-color: lightblue;
 }

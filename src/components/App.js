@@ -11,53 +11,57 @@ import SignOut from './SignOut'
 import CreateTask from './CreateTask'
 
 import moment from 'moment'
-import { split } from 'lodash';
-
-
-require('es6-promise').polyfill()
-require('isomorphic-fetch')
-
+import { pick, map, extend } from 'lodash';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       messages: [],
-      folderName: '',
       user: null,
+      channelName: 'Communal'
     }
-  }
-
-  componentDidMount() {
-    fetch('/api/messages', {
-      headers: {
-       'Accept': 'application/json',
-       'Content-Type': 'application/json'
-      },
-      method: 'get'
-    })
-    .then((res) => res.json())
-    .then((res) => {
-      this.setState({
-        messages: res
-      })
-    })
-    .catch((err) => {
-      console.error(err)
-    })
   }
 
   componentWillMount() {
     firebase.auth().onAuthStateChanged(user => this.setState({ user }));
+    this.fetchMessages(this.state.channelName)
+  }
+
+  addNewMessage(draftMessage) {
+    const { user, channelName } = this.state;
+    firebase.database().ref(channelName).push({
+      user: pick(user, 'displayName', 'email', 'uid'),
+      content: draftMessage,
+      createdAt: moment().format('MMMM D, h:mm a')
+    });
+    this.fetchMessages(this.state.channelName)
+  }
+
+  updateTitle(e) {
+    this.setState({ messages: [] })
+    this.setState({ channelName: e })
+    firebase.database().ref('channel').set({
+        channel: e
+    });
+    this.fetchMessages(e)
+  }
+
+  fetchMessages(e) {
+    this.setState({ messages: [] })
+    firebase.database().ref(e).on('value', (snapshot) => {
+      const messages = snapshot.val() || {}
+      this.setState({
+        messages: map(messages, (val, key) => extend(val, { key }))
+      })
+    })
   }
 
   render() {
     let { user } = this.state
     let currentUser;
-    let firstName;
     if (user !== null) {
       currentUser = user.displayName
-      firstName = split(user.displayName, ' ')
     }
 
     return (
@@ -79,11 +83,18 @@ class App extends Component {
           </div>
         </div>
       }
-        <CreateTask />
-        
+
         <div className="main-container">
-          <Dashboard />
-          <MessageFeed />
+          <Dashboard
+            updateTitle={this.updateTitle.bind(this)}
+          />
+          <MessageFeed
+            channelName={this.state.channelName}
+            addNewMessage={this.addNewMessage.bind(this)}
+            fetchMessages={this.fetchMessages.bind(this)}
+            messages={this.state.messages}
+            currentUser={currentUser}
+          />
         </div>
       </div>
     )
