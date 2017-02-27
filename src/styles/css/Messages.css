@@ -1,3 +1,7 @@
 .message-list {
-  height: 87vh;
+  margin: 20px;
+  width: 65vw;
+  height: 77vh;
+  text-align: left;
+  overflow: scroll;
 }

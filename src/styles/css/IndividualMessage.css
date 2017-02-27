@@ -1,0 +1,17 @@
+.date-and-username {
+  margin: 5px auto;
+}
+
+.created-at, .display-name {
+  margin: 5px 5px 5px 0;
+  font-weight: bold;
+}
+
+.display-name {
+  color: #ba0000;
+}
+
+.content {
+  margin: 0 0 11px 7px;
+  color: #4b4b4b;
+}

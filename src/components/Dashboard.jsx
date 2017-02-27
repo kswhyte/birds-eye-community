@@ -35,7 +35,7 @@ export default class Dashboard extends Component {
     return (
       <div className="dashboard">
         <section className="dashboard-header">
-          <h1 className="dashboard-title">Channels</h1>
+          <h1 className="dashboard-title">CHANNELS</h1>
         </section>
 
         <section className="dashboard-body">

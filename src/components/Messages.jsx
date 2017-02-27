@@ -17,7 +17,9 @@ export default class Messages extends Component {
   render() {
     let messageDisplay
     if(this.props.messages){
-      messageDisplay = this.props.messages.map(message => <IndividualMessage key={message.key} message={message} />)
+      messageDisplay = this.props.messages.map(message =>
+        <IndividualMessage key={message.key} message={message} />
+      )
     }
 
     return (

@@ -3,9 +3,14 @@
   width: 70vw;
 }
 
-.message-container {
+.messages-container {
   background-color: #eee;
+
+}
+
+.message-container {
   display: flex;
+  background-color: #eee;
   height: 100vh;
   display: block;
   width: 70vw;
@@ -21,5 +26,5 @@
 }
 
 .message-entry-point {
-  
+
 }

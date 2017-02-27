@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../styles/css/MessageFeed.css'
 import UserInput from './UserInput'
 import Messages from './Messages'
+import '../styles/css/MessageFeed.css'
 
 export default class MessageFeed extends Component {
   constructor() {
@@ -15,7 +16,7 @@ export default class MessageFeed extends Component {
     return (
       <div className="messages-container">
         <section className="messages-header">
-          <h1 className="messages-title">{this.props.channelName}</h1>
+          <h1 className="messages-title">{this.props.channelName.toUpperCase()}</h1>
         </section>
 
         <section className="message-container">

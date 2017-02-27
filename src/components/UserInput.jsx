@@ -3,17 +3,25 @@ import '../styles/css/UserInput.css'
 
 export default class UserInput extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       draftMessage: '',
     }
   }
+
   submitMessage(e) {
-    e.preventDefault();
-    this.props.addNewMessage(this.state.draftMessage)
-    this.setState ({
-      draftMessage: ''
-    })
+    e.preventDefault()
+
+      this.props.addNewMessage(this.state.draftMessage)
+      this.setState ({
+        draftMessage: ''
+      })
+  }
+
+  addMessage(e) {
+    if (e.keyCode === 13 && e.shiftKey === false) {
+      this.submitMessage(e)
+    }
   }
 
   render() {
@@ -31,6 +39,7 @@ export default class UserInput extends Component {
         type='submit'
         onClick={(e) => this.submitMessage(e)}
         value='Submit'
+        onSubmit={(e) => this.addMessage(e)}
       />
     </form>
     )
