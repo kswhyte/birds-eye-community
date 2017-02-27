@@ -12,7 +12,7 @@ export default class MessageFeed extends Component {
 
   render() {
     return (
-      <div className="messages">
+      <div className="messages-container">
         <section className="messages-header">
           <h1 className="messages-title">Message Feed</h1>
         </section>

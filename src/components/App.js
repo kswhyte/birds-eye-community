@@ -79,11 +79,13 @@ class App extends Component {
           </div>
         </div>
       }
-        <CreateTask />
-        
+
         <div className="main-container">
           <Dashboard />
-          <MessageFeed />
+          <div className="messages">
+            <MessageFeed />
+            <CreateTask />
+          </div>
         </div>
       </div>
     )
