@@ -18,11 +18,11 @@ console.log(this.props.imgURL)
       <section className='upload-image-form'>
         <form
           aria-label='upload image form'
-          onSubmit={(e) =>
-            this.props.uploadImage(e.target.files)}
+          onSubmit={(e) => this.props.uploadImage(e.target.files)}
         >
           <label className='image-upload-container'>
-            { this.props.imgURL === '../styles/icons/picture-upload.svg' ?
+            { this.props.imgURL === '../styles/icons/picture-upload.png'
+            ?
               <div>
                 <img
                   className='user-icon-pic'
@@ -34,7 +34,7 @@ console.log(this.props.imgURL)
             :
               <div>
                 <img
-                  className='user-chosen-pic'
+                  className='user-icon-pic'
                   src={this.props.imgURL}
                   alt='placeholder'
                 >
@@ -48,12 +48,8 @@ console.log(this.props.imgURL)
               accept='image/*'
               onChange={(e) =>
                 this.props.handleImageChange(e)}
-            >
-            </input>
+            />
           </label>
-          <div className="imgPreview">
-            { imagePreview }
-          </div>
         </form>
       </section>
     )

@@ -10,31 +10,36 @@ export default class MessageFeed extends Component {
     this.state = {
       messages: [],
       file: '',
-      imgURL: '../styles/icons/picture-upload.svg'
+      imgURL: './public/src/styles/icons/picture-upload.svg'
     }
   }
 
   handleImageChange(e) {
     e.preventDefault()
 
-    let reader = new FileReader();
-    let file = e.target.files[0];
+    let reader = new FileReader()
+    let file = e.target.files[0]
 
     reader.onloadend = () => {
       this.setState({
         file: file,
         imgURL: reader.result
-      });
+      })
     }
+
     reader.readAsDataURL(file)
     this.uploadImage(e.target.files)
   }
 
   uploadImage(imageUpload) {
-    this.setState({ userImage: imageUpload[0] })
+    this.setState({
+      userImage: imageUpload[0]
+    })
   }
 
   render() {
+    console.log('imgURL', this.state.imgURL);
+
     return (
       <div className="messages-container">
         <section className="messages-header">
