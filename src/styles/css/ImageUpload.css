@@ -1,8 +1,12 @@
-.user-icon-pic {
+.user-icon-pic, .placeholder-pic {
   width: 50px;
   height: 50px;
 }
 
-/*.update-image-btn {
+.user-icon-pic {
+  border-radius: 5px;
+}
+
+.update-image-btn {
   display: none;
-}*/
+}

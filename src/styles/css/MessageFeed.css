@@ -23,3 +23,9 @@
   padding: 10px 10px 0 10px;
   font-size: 2em;
 }
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

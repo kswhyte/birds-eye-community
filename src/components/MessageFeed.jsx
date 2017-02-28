@@ -3,6 +3,7 @@ import UserInput from './UserInput'
 import Messages from './Messages'
 import ImageUpload from './ImageUpload'
 import '../styles/css/MessageFeed.css'
+import picturePlaceholder from '../styles/icons/picture-upload.svg'
 
 export default class MessageFeed extends Component {
   constructor() {
@@ -10,7 +11,8 @@ export default class MessageFeed extends Component {
     this.state = {
       messages: [],
       file: '',
-      imgURL: './public/src/styles/icons/picture-upload.svg'
+      imgPlaceholder: picturePlaceholder,
+      imgURL: null
     }
   }
 
@@ -19,12 +21,15 @@ export default class MessageFeed extends Component {
 
     let reader = new FileReader()
     let file = e.target.files[0]
+    console.log('file', file);
+    console.log('imgURL111', reader);
 
     reader.onloadend = () => {
       this.setState({
         file: file,
         imgURL: reader.result
       })
+      console.log('PING ONLOADEND');
     }
 
     reader.readAsDataURL(file)
@@ -38,8 +43,6 @@ export default class MessageFeed extends Component {
   }
 
   render() {
-    console.log('imgURL', this.state.imgURL);
-
     return (
       <div className="messages-container">
         <section className="messages-header">

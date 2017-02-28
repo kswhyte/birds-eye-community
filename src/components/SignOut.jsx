@@ -3,7 +3,7 @@ import { signOut } from '../firebase'
 
 const SignOut = ({ user }) => {
   return (
-    <div>
+    <div className="sign-out-btn-container">
       <button className='sign-out-btn' onClick={() => signOut()}>Sign Out</button>
     </div>
   )

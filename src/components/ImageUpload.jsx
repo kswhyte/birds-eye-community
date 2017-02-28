@@ -1,18 +1,29 @@
 import React, { Component } from 'react'
 import '../styles/css/ImageUpload.css'
+import picturePlaceholder from '../styles/icons/picture-upload.png'
 
 export default class ImageUpload extends Component {
   render() {
     let { imgURL } = this.props
     let imagePreview
 
-    if (imgURL) {
-      imagePreview = ( <img src={imgURL} alt="preview"/> )
+    if (imgURL !== null) {
+      imagePreview = (
+        <img
+          className='user-icon-pic'
+          src={imgURL}
+          alt="preview"
+        />
+      )
     } else {
-      imagePreview = ( <div className="previewText"></div> )
+      imagePreview = (
+        <img
+          className='placeholder-pic'
+          src={picturePlaceholder}
+          alt="placeholder"
+        />
+      )
     }
-
-console.log(this.props.imgURL)
 
     return (
       <section className='upload-image-form'>
@@ -21,26 +32,10 @@ console.log(this.props.imgURL)
           onSubmit={(e) => this.props.uploadImage(e.target.files)}
         >
           <label className='image-upload-container'>
-            { this.props.imgURL === '../styles/icons/picture-upload.png'
-            ?
-              <div>
-                <img
-                  className='user-icon-pic'
-                  src={this.props.imgURL}
-                  alt='placeholder'
-                >
-                </img>
-              </div>
-            :
-              <div>
-                <img
-                  className='user-icon-pic'
-                  src={this.props.imgURL}
-                  alt='placeholder'
-                >
-                </img>
-              </div>
-            }
+            <div>
+              { imagePreview }
+            </div>
+
             <input
               className='update-image-btn'
               aria-label='update image button'

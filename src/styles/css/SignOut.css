@@ -1,3 +1,7 @@
 .sign-out-btn {
   margin: 20px auto 30px auto;
 }
+
+.sign-out-btn-container {
+  margin: 30px 0;
+}
