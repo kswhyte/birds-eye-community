@@ -1,24 +1,26 @@
 .messages-header {
-  background-color: red;
+  background-color: #eee;
   width: 70vw;
+}
+
+.messages-container {
+  background-color: #eee;
 }
 
 .message-container {
   display: flex;
-}
-
-.messages-title {
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.message-entry-point {
-  background-color: yellow;
+  background-color: #eee;
+  height: 100vh;
   display: block;
   width: 70vw;
   /*height: 55vh;*/
-  height: 300px;
-  border-style: red;
-  background-color: grey;
-  margin: 0 auto;
+  margin: 0 10px;
+}
+
+.messages-title {
+  font-family: 'Oswald', sans-serif;
+  margin: 5px auto 0 auto;
+  padding: 10px 10px 0 10px;
+  /*color: #fff;*/
+  font-size: 2em;
 }

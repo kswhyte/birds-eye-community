@@ -1,0 +1,10 @@
+.message-input-field {
+  margin: 20px;
+  width: 60vw;
+  overflow: scroll;
+}
+
+.submit-button {
+  display: none;
+  width: 80vw;
+}

@@ -12,15 +12,15 @@ export default class Dashboard extends Component {
         'Bathroom',
         'Bedroom',
         'Kitchen',
+        'Study',
         'Garden',
-        'Food/Recipes',
+        'Food',
         'Groceries',
+        'Shopping',
         'Health',
         'Behavior',
         'Creativity',
-        'Study',
         'Spirituality',
-        'Shopping',
         'Exercise',
         'Pets',
       ]
@@ -29,18 +29,23 @@ export default class Dashboard extends Component {
 
   render() {
     let topics = this.state.channelTopics.map(e => {
-      return <li className="topic-names" key={e}><a onClick={() => this.props.updateTitle(e)}> {e} </a></li>
+      return (
+        <li className="topic-names" key={e}>
+          <div className={e.toLowerCase()}></div>
+          <a onClick={() => this.props.updateTitle(e)}> { e } </a>
+        </li>
+      )
     })
 
     return (
       <div className="dashboard">
         <section className="dashboard-header">
-          <h1 className="dashboard-title">Channels</h1>
+          <h1 className="dashboard-title">CHANNELS</h1>
         </section>
 
         <section className="dashboard-body">
           <ul className="dashboard-categories">
-            {topics}
+            { topics }
           </ul>
         </section>
       </div>

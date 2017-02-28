@@ -1,18 +1,27 @@
 import React, { Component } from 'react'
+import '../styles/css/UserInput.css'
 
 export default class UserInput extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       draftMessage: '',
     }
   }
+
   submitMessage(e) {
-    e.preventDefault();
-    this.props.addNewMessage(this.state.draftMessage)
-    this.setState ({
-      draftMessage: ''
-    })
+    e.preventDefault()
+
+      this.props.addNewMessage(this.state.draftMessage)
+      this.setState ({
+        draftMessage: ''
+      })
+  }
+
+  addMessage(e) {
+    if (e.keyCode === 13 && e.shiftKey === false) {
+      this.submitMessage(e)
+    }
   }
 
   render() {
@@ -21,7 +30,7 @@ export default class UserInput extends Component {
       <input
         type='text'
         className='message-input-field'
-        placeholder={`Message ${this.props.channelName}`}
+        placeholder={`Message the ${this.props.channelName} Channel...`}
         value={this.state.draftMessage}
         onChange={(e) => this.setState({ draftMessage: e.target.value })}
       />
@@ -30,6 +39,7 @@ export default class UserInput extends Component {
         type='submit'
         onClick={(e) => this.submitMessage(e)}
         value='Submit'
+        onSubmit={(e) => this.addMessage(e)}
       />
     </form>
     )

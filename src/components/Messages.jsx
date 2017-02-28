@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import IndividualMessage from './IndividualMessage'
+import '../styles/css/Messages.css'
 
 export default class Messages extends Component {
   constructor() {
@@ -16,7 +17,9 @@ export default class Messages extends Component {
   render() {
     let messageDisplay
     if(this.props.messages){
-      messageDisplay = this.props.messages.map(message => <IndividualMessage key={message.key} message={message} />)
+      messageDisplay = this.props.messages.map(message =>
+        <IndividualMessage key={message.key} message={message} />
+      )
     }
 
     return (
