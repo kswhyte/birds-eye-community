@@ -24,13 +24,13 @@
 }
 
 .app-header {
-  background: url('../images/owl-unsplash2.jpg') no-repeat;
+  background: url('../images/owl-unsplash3.jpg') no-repeat fixed;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  padding: 100px;
+  padding: 111px 111px 300px 111px;
   color: white;
 }
 

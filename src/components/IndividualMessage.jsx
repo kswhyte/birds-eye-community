@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import '../styles/css/IndividualMessage.css'
 
 export default class IndividualMessage extends Component {
-
-  render(){
+  render() {
     return (
       <li>
         <div className="date-and-username">
@@ -14,6 +13,7 @@ export default class IndividualMessage extends Component {
             from { this.props.message.user.displayName }
           </span>
         </div>
+
         <p className="content">
           { this.props.message.content }
         </p>

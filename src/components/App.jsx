@@ -8,7 +8,6 @@ import Dashboard from './Dashboard'
 import MessageFeed from './MessageFeed'
 import SignIn from './SignIn'
 import SignOut from './SignOut'
-import CreateTask from './CreateTask'
 
 import moment from 'moment'
 import { pick, map, extend } from 'lodash'
