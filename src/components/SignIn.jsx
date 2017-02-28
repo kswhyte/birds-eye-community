@@ -4,7 +4,7 @@ import { signIn } from '../firebase'
 import googleIcon from '../styles/icons/google-icon.svg'
 import '../styles/css/SignIn.css'
 
-const SignIn = ({ user }) => {
+const SignIn = () => {
   return (
     <div className="sign-in-container">
       <img src={googleIcon} className="google-icon" alt="google-icon" />

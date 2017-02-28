@@ -21,15 +21,12 @@ export default class MessageFeed extends Component {
 
     let reader = new FileReader()
     let file = e.target.files[0]
-    console.log('file', file);
-    console.log('imgURL111', reader);
 
     reader.onloadend = () => {
       this.setState({
         file: file,
         imgURL: reader.result
       })
-      console.log('PING ONLOADEND');
     }
 
     reader.readAsDataURL(file)
