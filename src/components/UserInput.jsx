@@ -24,6 +24,23 @@ export default class UserInput extends Component {
     }
   }
 
+  // pushContact(e) {
+  //   e.preventDefault()
+  //
+  //   let newContact = {
+  //     notes:    this.state.notes,
+  //     followUp: this.state.followUp,
+  //     imgKey:   Date.now()
+  //   }
+  //   return(this.props.createContact(
+  //     newContact,
+  //     this.state.userImage,
+  //     newContact.imgKey,
+  //   ),
+  //   this.setInitialState()
+  //   )
+  // }
+
   render() {
     return (
       <form className="message-input">

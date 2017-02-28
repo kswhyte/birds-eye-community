@@ -9,6 +9,11 @@ import { assert } from 'chai'
 const sinon = require('sinon')
 
 describe('Unit Test | App', () => {
+  it('renders without crashing', () => {
+    const div = document.createElement('div')
+    ReactDOM.render(<App />, div)
+  })
+
   it('can mount with no properties', () => {
     const wrapper = shallow(<App />)
   })

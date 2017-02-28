@@ -5,12 +5,12 @@ import Dashboard from '../src/components/Dashboard.jsx'
 import { shallow, mount, render } from 'enzyme'
 import { assert } from 'chai'
 
-
 const sinon = require('sinon')
 
 describe('Unit Test | Dashboard', () => {
-  it('can mount with no properties', () => {
-    const wrapper = shallow(<Dashboard />)
+  it('renders without crashing', () => {
+    const div = document.createElement('div')
+    ReactDOM.render(<Dashboard />, div)
   })
 
   it('can mount with no properties', () => {

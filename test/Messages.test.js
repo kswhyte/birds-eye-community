@@ -8,6 +8,16 @@ import { assert } from 'chai'
 const sinon = require('sinon')
 
 describe('Unit Test | Messages', () => {
+  let props = {
+    channelName: 'foo',
+    fetchMessages: sinon.spy()
+  }
+
+  it('renders without crashing', () => {
+    const div = document.createElement('div')
+    ReactDOM.render(<Messages {...props} />, div)
+  })
+
   it('can mount with no properties', () => {
     const wrapper = shallow(<Messages />)
   })

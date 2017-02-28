@@ -13,9 +13,10 @@ describe('Unit Test | MessageFeed', () => {
     fetchMessages: sinon.spy()
   }
 
-  // it('can mount with no properties', () => {
-  //   const wrapper = shallow(<MessageFeed />)
-  // })
+  it('renders without crashing', () => {
+    const div = document.createElement('div')
+    ReactDOM.render(<MessageFeed {...props} />, div)
+  })
 
   it('renders as a div element', () => {
     const wrapper = shallow(<MessageFeed {...props} />)
