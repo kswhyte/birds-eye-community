@@ -26,22 +26,22 @@ export default class UserInput extends Component {
 
   render() {
     return (
-    <form className="message-input">
-      <input
-        type='text'
-        className='message-input-field'
-        placeholder={`Message the ${this.props.channelName} Channel...`}
-        value={this.state.draftMessage}
-        onChange={(e) => this.setState({ draftMessage: e.target.value })}
-      />
-      <input
-        className='submit-button button'
-        type='submit'
-        onClick={(e) => this.submitMessage(e)}
-        value='Submit'
-        onSubmit={(e) => this.addMessage(e)}
-      />
-    </form>
+      <form className="message-input">
+        <input
+          type='text'
+          className='message-input-field'
+          placeholder={`Message the ${this.props.channelName} Channel...`}
+          value={this.state.draftMessage}
+          onChange={(e) => this.setState({ draftMessage: e.target.value })}
+        />
+        <input
+          className='submit-button button'
+          type='submit'
+          onClick={(e) => this.submitMessage(e)}
+          value='Submit'
+          onSubmit={(e) => this.addMessage(e)}
+        />
+      </form>
     )
   }
 }

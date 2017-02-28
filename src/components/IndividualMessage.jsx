@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../styles/css/IndividualMessage.css'
 
+// const IndividualMessage = ({ message.createdAt, user.displayName, message.content }) => {
 export default class IndividualMessage extends Component {
   render() {
     return (
@@ -21,3 +22,16 @@ export default class IndividualMessage extends Component {
     )
   }
 }
+
+// export default IndividualMessage
+
+
+// const SignOut = ({ user }) => {
+//   return (
+//     <div>
+//       <button className='sign-out-btn' onClick={() => signOut()}>Sign Out</button>
+//     </div>
+//   )
+// }
+//
+// export default SignOut

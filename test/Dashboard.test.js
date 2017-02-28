@@ -1,8 +1,10 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import Dashboard from '../src/components/Dashboard.jsx'
+
 import { shallow, mount, render } from 'enzyme'
 import { assert } from 'chai'
 
-import Dashboard from '../src/components/Dashboard.jsx'
 
 const sinon = require('sinon')
 

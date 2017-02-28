@@ -1,7 +1,10 @@
 // import React from 'react'
+// import ReactDOM from 'react-dom'
+//
 // import { shallow, mount, render } from 'enzyme'
 // import { assert } from 'chai'
 //
+// import { IndividualMessage } from '../src/components/IndividualMessage.jsx'
 // import IndividualMessage from '../src/components/IndividualMessage.jsx'
 //
 // const sinon = require('sinon')

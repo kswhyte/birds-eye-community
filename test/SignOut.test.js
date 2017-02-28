@@ -1,9 +1,11 @@
 // import React from 'react'
+// import ReactDOM from 'react-dom'
+// import App from '../src/components/App.jsx'
+// import { SignOut } from '../src/components/SignOut.jsx'
+
 // import { shallow, mount, render } from 'enzyme'
 // import { assert } from 'chai'
 //
-// import App from '../src/components/App.jsx'
-// import { SignOut } from '../src/components/SignOut.jsx'
 //
 // const sinon = require('sinon')
 //

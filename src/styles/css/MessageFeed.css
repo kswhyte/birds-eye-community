@@ -14,6 +14,7 @@
   display: block;
   width: 70vw;
   margin: 0 10px;
+  padding-top: 5px;
 }
 
 .messages-title {

@@ -1,15 +1,37 @@
 import React, { Component } from 'react'
-import '../styles/css/MessageFeed.css'
 import UserInput from './UserInput'
 import Messages from './Messages'
+import ImageUpload from './ImageUpload'
 import '../styles/css/MessageFeed.css'
 
 export default class MessageFeed extends Component {
   constructor() {
     super()
     this.state = {
-      messages: []
+      messages: [],
+      file: '',
+      imgURL: '../styles/icons/picture-upload.svg'
     }
+  }
+
+  handleImageChange(e) {
+    e.preventDefault()
+
+    let reader = new FileReader();
+    let file = e.target.files[0];
+
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+        imgURL: reader.result
+      });
+    }
+    reader.readAsDataURL(file)
+    this.uploadImage(e.target.files)
+  }
+
+  uploadImage(imageUpload) {
+    this.setState({ userImage: imageUpload[0] })
   }
 
   render() {
@@ -26,10 +48,17 @@ export default class MessageFeed extends Component {
             fetchMessages={this.props.fetchMessages.bind(this)}
             messages={this.props.messages}
           />
-          <UserInput
-            channelName={this.props.channelName}
-            addNewMessage={this.props.addNewMessage}
-          />
+          <div className="input-container">
+            <ImageUpload
+              uploadImage={this.uploadImage.bind(this)}
+              handleImageChange={this.handleImageChange.bind(this)}
+              imgURL={this.state.imgURL}
+            />
+            <UserInput
+              channelName={this.props.channelName}
+              addNewMessage={this.props.addNewMessage}
+            />
+          </div>
         </section>
       </div>
     )

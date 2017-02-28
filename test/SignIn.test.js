@@ -1,9 +1,11 @@
 // import React from 'react'
+// import ReactDOM from 'react-dom'
+// import App from '../src/components/App.jsx'
+// import { SignIn } from '../src/components/SignIn.jsx'
+
 // import { shallow, mount, render } from 'enzyme'
 // import { assert, expect } from 'chai'
 //
-// import App from '../src/components/App.jsx'
-// import { SignIn } from '../src/components/SignIn.jsx'
 //
 // describe('Unit Test | SignIn', () => {
 //   it('can mount with no properties', () => {

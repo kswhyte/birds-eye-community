@@ -1,8 +1,9 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import UserInput from '../src/components/UserInput.jsx'
+
 import { shallow, mount, render } from 'enzyme'
 import { assert } from 'chai'
-
-import UserInput from '../src/components/UserInput.jsx'
 
 const sinon = require('sinon')
 

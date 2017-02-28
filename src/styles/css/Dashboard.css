@@ -27,6 +27,7 @@
 .dashboard-body {
   width: 30vw;
   background-color: #999;
+  padding-top: 10px;
 }
 
 .dashboard-categories {
@@ -38,7 +39,7 @@
 
 li.topic-names {
   list-style: none;
-  margin: 7px 10px;
+  margin: 7px 20px;
   font-size: 1.5em;
   color: #411b50;
   display: flex;

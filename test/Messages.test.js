@@ -1,8 +1,9 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import Messages from '../src/components/Messages.jsx'
+
 import { shallow, mount, render } from 'enzyme'
 import { assert } from 'chai'
-
-import Messages from '../src/components/Messages.jsx'
 
 const sinon = require('sinon')
 
