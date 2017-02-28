@@ -29,11 +29,10 @@ export default class Dashboard extends Component {
 
   render() {
     let topics = this.state.channelTopics.map(e => {
-      console.log('eeee', e.toLowerCase());
       return (
         <li className="topic-names" key={e}>
           <div className={e.toLowerCase()}></div>
-          <a onClick={(e) => this.props.updateTitle(e)}> { e } </a>
+          <a onClick={() => this.props.updateTitle(e)}> { e } </a>
         </li>
       )
     })
