@@ -20,6 +20,8 @@ export default class Messages extends Component {
           message={message}
           deleteMessage={this.props.deleteMessage}
           starMessage={this.props.starMessage}
+          user={this.props.user}
+          currentUser={this.props.currentUser}
         />
       )
     }

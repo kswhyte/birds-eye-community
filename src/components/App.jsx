@@ -108,6 +108,7 @@ class App extends Component {
                 starMessage={this.starMessage.bind(this)}
                 messages={this.state.messages}
                 currentUser={currentUser}
+                user={this.state.user}
               />
             </div>
           </div>

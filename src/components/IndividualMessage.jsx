@@ -14,9 +14,12 @@ const IndividualMessage = ({ message, starMessage, deleteMessage }) => {
           <span className='starred' onClick={() => starMessage(message.key, message.starred)}>
             { message.starred ? '⭐️' : '☆'}
           </span>
-          <span className='delete-message' onClick={() => deleteMessage(message.key)}>
+          { this.props.user.displayName === this.props.currentUser ? <span className='delete-message' onClick={() => deleteMessage(message.key)}>
             Delete
           </span>
+          :
+          null
+          }
         </div>
 
       <p className="content">

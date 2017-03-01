@@ -54,6 +54,7 @@ export default class MessageFeed extends Component {
             messages={this.props.messages}
             deleteMessage={this.props.deleteMessage}
             starMessage={this.props.starMessage}
+            user={this.props.user}
           />
           <div className="input-container">
             <UserInput
