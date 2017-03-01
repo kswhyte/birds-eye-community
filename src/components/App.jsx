@@ -10,7 +10,7 @@ import SignIn from './SignIn'
 import SignOut from './SignOut'
 
 import moment from 'moment'
-import { pick, map, extend } from 'lodash'
+import { map, extend } from 'lodash'
 
 class App extends Component {
   constructor() {
@@ -30,11 +30,19 @@ class App extends Component {
   addNewMessage(draftMessage) {
     const { user, channelName } = this.state
     firebase.database().ref(channelName).push({
-      user: pick(user, 'displayName', 'email', 'uid'),
+      displayName: user.displayName,
+      email: user.email,
+      uid: user.uid,
       content: draftMessage,
-      createdAt: moment().format('MMMM D, h:mm a')
+      createdAt: moment().format('MMMM D, h:mm a'),
+      starred: false
     })
     this.fetchMessages(this.state.channelName)
+  }
+
+  deleteMessage(key) {
+    const { channelName } = this.state
+    firebase.database().ref(channelName).child(key).remove()
   }
 
   updateTitle(e) {
@@ -44,6 +52,14 @@ class App extends Component {
         channel: e
     })
     this.fetchMessages(e)
+  }
+
+  starMessage(key, starred) {
+    const { channelName } = this.state
+    firebase.database().ref(channelName).child(key)
+    .update({
+      starred: !starred,
+    });
   }
 
   fetchMessages(e) {
@@ -88,6 +104,8 @@ class App extends Component {
                 channelName={this.state.channelName}
                 addNewMessage={this.addNewMessage.bind(this)}
                 fetchMessages={this.fetchMessages.bind(this)}
+                deleteMessage={this.deleteMessage.bind(this)}
+                starMessage={this.starMessage.bind(this)}
                 messages={this.state.messages}
                 currentUser={currentUser}
               />

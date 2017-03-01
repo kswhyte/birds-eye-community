@@ -10,7 +10,6 @@
 .message-container {
   display: flex;
   background-color: #eee;
-  height: 100vh;
   display: block;
   width: 70vw;
   margin: 0 10px;

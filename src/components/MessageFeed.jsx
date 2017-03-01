@@ -52,6 +52,8 @@ export default class MessageFeed extends Component {
             channelName={this.props.channelName}
             fetchMessages={this.props.fetchMessages.bind(this)}
             messages={this.props.messages}
+            deleteMessage={this.props.deleteMessage}
+            starMessage={this.props.starMessage}
           />
           <div className="input-container">
             <ImageUpload

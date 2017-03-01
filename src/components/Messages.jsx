@@ -11,10 +11,6 @@ export default class Messages extends Component {
     }
   }
 
-  componentDidMount() {
-    this.props.fetchMessages()
-  }
-
   render() {
     let messageDisplay
     if (this.props.messages) {
@@ -22,6 +18,8 @@ export default class Messages extends Component {
         <IndividualMessage
           key={message.key}
           message={message}
+          deleteMessage={this.props.deleteMessage}
+          starMessage={this.props.starMessage}
         />
       )
     }
