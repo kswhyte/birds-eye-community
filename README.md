@@ -8,7 +8,7 @@ This app is a SLACK-like app for communicating to your family, roommates, or a c
 
 [Original Assignment](http://frontend.turing.io/projects/capstone.html)
 
-[Live Version...coming soon on Firebase]
+[Live Version](https://birdseyecommunity.firebaseapp.com/)
 
 ---
 
