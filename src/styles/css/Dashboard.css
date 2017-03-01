@@ -26,6 +26,7 @@
 
 .dashboard-body {
   width: 30vw;
+  height: 629px;
   background-color: #999;
   padding-top: 10px;
 }
@@ -33,7 +34,6 @@
 .dashboard-categories {
   margin: 20px;
   width: 30vh;
-  height: 100vh;
   text-align: left;
 }
 
