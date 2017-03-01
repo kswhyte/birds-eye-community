@@ -48,9 +48,6 @@ class App extends Component {
   updateTitle(e) {
     this.setState({ messages: [] })
     this.setState({ channelName: e })
-    firebase.database().ref('channel').set({
-        channel: e
-    })
     this.fetchMessages(e)
   }
 
@@ -108,7 +105,7 @@ class App extends Component {
                 starMessage={this.starMessage.bind(this)}
                 messages={this.state.messages}
                 currentUser={currentUser}
-                user={this.state.user}
+                user={user.displayName}
               />
             </div>
           </div>

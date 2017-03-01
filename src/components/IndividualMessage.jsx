@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/css/IndividualMessage.css'
 
-const IndividualMessage = ({ message, starMessage, deleteMessage }) => {
+const IndividualMessage = ({ message, starMessage, deleteMessage, user, currentUser }) => {
     return (
       <li>
         <div className="date-and-username">
@@ -14,11 +14,12 @@ const IndividualMessage = ({ message, starMessage, deleteMessage }) => {
           <span className='starred' onClick={() => starMessage(message.key, message.starred)}>
             { message.starred ? '⭐️' : '☆'}
           </span>
-          { this.props.user.displayName === this.props.currentUser ? <span className='delete-message' onClick={() => deleteMessage(message.key)}>
+          { user === currentUser ?
+            <span className='delete-message' onClick={() => deleteMessage(message.key)}>
             Delete
-          </span>
-          :
-          null
+            </span>
+            :
+            null
           }
         </div>
 
