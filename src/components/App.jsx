@@ -10,7 +10,7 @@ import SignIn from './SignIn'
 import SignOut from './SignOut'
 
 import moment from 'moment'
-import { pick, map, extend } from 'lodash'
+import { map, extend } from 'lodash'
 
 class App extends Component {
   constructor() {
@@ -30,7 +30,9 @@ class App extends Component {
   addNewMessage(draftMessage) {
     const { user, channelName } = this.state
     firebase.database().ref(channelName).push({
-      user: pick(user, 'displayName', 'email', 'uid'),
+      displayName: user.displayName,
+      email: user.email,
+      uid: user.uid,
       content: draftMessage,
       createdAt: moment().format('MMMM D, h:mm a')
     })

@@ -11,10 +11,6 @@ export default class Messages extends Component {
     }
   }
 
-  componentDidMount() {
-    this.props.fetchMessages()
-  }
-
   render() {
     let messageDisplay
     if(this.props.messages){

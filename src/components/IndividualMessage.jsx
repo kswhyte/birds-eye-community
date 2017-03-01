@@ -11,7 +11,7 @@ export default class IndividualMessage extends Component {
             { this.props.message.createdAt }
           </span>
           <span className="display-name">
-            from { this.props.message.user.displayName }
+            from { this.props.message.displayName }
           </span>
         </div>
 
