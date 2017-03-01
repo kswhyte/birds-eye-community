@@ -39,6 +39,12 @@ class App extends Component {
     this.fetchMessages(this.state.channelName)
   }
 
+  deleteMessage(key) {
+    const { channelName } = this.state
+    console.log(channelName);
+    firebase.database().ref(channelName).child(key).remove()
+  }
+
   updateTitle(e) {
     this.setState({ messages: [] })
     this.setState({ channelName: e })
@@ -90,6 +96,7 @@ class App extends Component {
                 channelName={this.state.channelName}
                 addNewMessage={this.addNewMessage.bind(this)}
                 fetchMessages={this.fetchMessages.bind(this)}
+                deleteMessage={this.deleteMessage.bind(this)}
                 messages={this.state.messages}
                 currentUser={currentUser}
               />

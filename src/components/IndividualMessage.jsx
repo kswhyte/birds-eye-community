@@ -13,6 +13,9 @@ export default class IndividualMessage extends Component {
           <span className="display-name">
             from { this.props.message.displayName }
           </span>
+          <span className='delete-message' onClick={() => this.props.deleteMessage(this.props.message.key)}>
+            Delete
+          </span>
         </div>
 
         <p className="content">
