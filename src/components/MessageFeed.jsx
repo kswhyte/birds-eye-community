@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import firebase from 'firebase'
+
 import UserInput from './UserInput'
 import Messages from './Messages'
 import ImageUpload from './ImageUpload'
@@ -39,6 +41,14 @@ export default class MessageFeed extends Component {
     })
   }
 
+  addNewImage(e) {
+    e.preventDefault()
+    const { imgURL, file, userImage } = this.state
+    firebase.storage().ref(`${this.props.channelName} - ${userImage.name}`).put(file)
+    this.props.fetchMessages(this.props.channelName)
+    // firebase.storage().ref().
+  }
+
   render() {
     return (
       <div className="messages-container">
@@ -60,6 +70,8 @@ export default class MessageFeed extends Component {
               uploadImage={this.uploadImage.bind(this)}
               handleImageChange={this.handleImageChange.bind(this)}
               imgURL={this.state.imgURL}
+              addNewImage={this.addNewImage.bind(this)}
+              fetchMessages={this.props.fetchMessages}
             />
             <UserInput
               channelName={this.props.channelName}

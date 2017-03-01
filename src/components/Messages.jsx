@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import IndividualMessage from './IndividualMessage'
 
 import '../styles/css/Messages.css'
@@ -9,6 +10,19 @@ export default class Messages extends Component {
     this.state = {
       channelName: ''
     }
+  }
+
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom = () => {
+    const node = ReactDOM.findDOMNode(this.messagesEnd);
+    node.scrollIntoView({ behavior: 'smooth' });
   }
 
   render() {
@@ -29,6 +43,11 @@ export default class Messages extends Component {
         <ul>
           { messageDisplay }
         </ul>
+        <div
+          style={{float:"left", clear: "both"}}
+          ref={(el) => { this.messagesEnd = el }}
+        >
+        </div>
       </div>
     )
   }

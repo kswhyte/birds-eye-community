@@ -87,7 +87,8 @@ class App extends Component {
             <p className="current-date">{moment().format('MMMM Do YYYY')}</p>
           </div>
         </div>
-          {!this.state.user ?
+          {!this.state.user
+            ?
             <SignIn />
             :
           <div>

@@ -29,7 +29,6 @@ export default class ImageUpload extends Component {
       <section className='upload-image-form'>
         <form
           aria-label='upload image form'
-          onSubmit={(e) => this.props.uploadImage(e.target.files)}
         >
           <label className='image-upload-container'>
             <div>
@@ -43,6 +42,11 @@ export default class ImageUpload extends Component {
               accept='image/*'
               onChange={(e) =>
                 this.props.handleImageChange(e)}
+            />
+            <input
+              className='submit-image'
+              type='submit'
+              onClick={(e) => this.props.addNewImage(e)}
             />
           </label>
         </form>
