@@ -18,3 +18,15 @@
   margin: 0 0 15px 7px;
   color: #4b4b4b;
 }
+
+.starred {
+  margin: 0 5px;
+}
+
+.starred:hover{
+  cursor: pointer;
+}
+
+.delete-message:hover {
+  cursor: pointer;
+}
