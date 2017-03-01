@@ -56,11 +56,6 @@ export default class MessageFeed extends Component {
             starMessage={this.props.starMessage}
           />
           <div className="input-container">
-            <ImageUpload
-              uploadImage={this.uploadImage.bind(this)}
-              handleImageChange={this.handleImageChange.bind(this)}
-              imgURL={this.state.imgURL}
-            />
             <UserInput
               channelName={this.props.channelName}
               addNewMessage={this.props.addNewMessage}
