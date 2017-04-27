@@ -1,4 +1,4 @@
-#Bird's Eye Community
+# Bird's Eye Community
 
 Managing and overseeing community resources can be difficult. Whether you live with a group of people, roommates, or family, smoothly managing all that needs to be tracked and taken care of regarding your living needs is no easy task. Keeping an account of what people said, what needs to be done, or keeping track of what unique link, book, or movie that was mentioned over a meal can be lost in the wind.
 
